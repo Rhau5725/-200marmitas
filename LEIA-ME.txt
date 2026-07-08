@@ -1,0 +1,22 @@
+MARMITAÊ — 216 MARMITAS FIT
+
+Abra o arquivo index.html no navegador.
+
+O entregável inclui:
+- 216 combinações de receitas congeláveis
+- Filtros por objetivo e busca
+- Informações de calorias, proteína e carboidratos
+- Ingredientes, preparo e instruções de congelamento
+- Favoritos salvos no aparelho
+- Planejamento automático de segunda a sexta
+- Lista de compras automática e interativa
+- Mapa interativo de substituições econômicas
+- Calculadora de quantidades por pessoas, refeições e dias
+- Quiz de paladar com recomendações personalizadas
+- Interface responsiva para celular e desktop
+
+Paleta:
+- Verde-limão #B8F238
+- Creme #F7F3E9
+- Grafite #17201B
+- Coral #FF765F (acento)

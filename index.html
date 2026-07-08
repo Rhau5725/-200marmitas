@@ -1,1 +1,145 @@
-meu porjeto
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b8f238">
+  <title>Marmitaê — 216 Marmitas Fit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Início">
+        <img class="brand-logo" src="./assets/protocolo-congelador-fit.png" alt="">
+        <span>Marmitas Fit</span>
+      </a>
+      <button class="round-btn" id="favoritesBtn" aria-label="Ver favoritas">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">SEU FREEZER, SUA ROTINA</span>
+          <h1>+200 marmitas.<br><span>Zero complicação.</span></h1>
+          <p>Escolha, cozinhe e congele.</p>
+          <button class="primary-btn" data-scroll="recipes">Explorar receitas <span>→</span></button>
+        </div>
+        <div class="hero-photo" role="img" aria-label="Quatro marmitas fit coloridas">
+          <div class="float-card"><strong>até 35g</strong><small>proteína</small></div>
+          <div class="freeze-badge">❄<span>freezer<br>amigo</span></div>
+        </div>
+      </section>
+
+      <section class="quick-stats" aria-label="Destaques">
+        <div><strong>216</strong><span>receitas</span></div>
+        <div><strong>15 min</strong><span>preparo médio</span></div>
+        <div><strong>3 meses</strong><span>no freezer</span></div>
+      </section>
+
+      <section class="section" id="recipes">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">ESCOLHA SEU OBJETIVO</span>
+            <h2>O que vai pra marmita?</h2>
+          </div>
+          <span class="count-pill" id="recipeCount">216 opções</span>
+        </div>
+
+        <div class="filter-row" id="filters">
+          <button class="chip active" data-filter="todas">✨ Todas</button>
+          <button class="chip" data-filter="leve">🥬 Leves</button>
+          <button class="chip" data-filter="proteica">💪 Proteicas</button>
+          <button class="chip" data-filter="economica">🪙 Econômicas</button>
+          <button class="chip" data-filter="sem-lactose">🌿 Sem lactose</button>
+        </div>
+
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="searchInput" type="search" placeholder="Buscar frango, arroz, legumes..." aria-label="Buscar receitas">
+        </div>
+
+        <div class="recipe-grid" id="recipeGrid"></div>
+        <button class="ghost-btn" id="showMoreBtn">Ver mais receitas ↓</button>
+      </section>
+
+      <section class="planner-section" id="planner">
+        <div class="planner-intro">
+          <span class="eyebrow light">PLANEJE EM 1 TOQUE</span>
+          <h2>Sua semana<br>no piloto automático.</h2>
+          <p>5 dias. 5 marmitas. Uma compra.</p>
+          <button class="lime-btn" id="autoPlanBtn">Montar minha semana ⚡</button>
+        </div>
+        <div class="week-card">
+          <div class="week-title">
+            <div><small>MEU PLANO</small><strong>Semana fit</strong></div>
+            <button id="clearPlanBtn" title="Limpar plano">↻</button>
+          </div>
+          <div id="weekList" class="week-list"></div>
+          <button class="shopping-btn" id="shoppingBtn"><span>🛒</span><span>Gerar lista de compras<small id="planCount">0 marmitas</small></span><b>→</b></button>
+        </div>
+      </section>
+
+      <section class="freeze-guide">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">SEM ERRO</span>
+            <h2>Congelou. Durou.</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <article><span>01</span><div class="step-icon">♨</div><h3>Esfrie</h3><p>Antes de tampar</p></article>
+          <article><span>02</span><div class="step-icon">▣</div><h3>Porcione</h3><p>Em potes rasos</p></article>
+          <article><span>03</span><div class="step-icon">❄</div><h3>Congele</h3><p>Por até 90 dias</p></article>
+        </div>
+
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="active" data-scroll="recipes"><span>⌂</span>Receitas</button>
+      <button data-scroll="planner"><span>▦</span>Planejar</button>
+      <button id="navListBtn"><span>☷</span>Compras</button>
+      <button id="navSavedBtn"><span>♡</span>Salvas</button>
+    </nav>
+  </div>
+
+  <div class="modal" id="recipeModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-sheet">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-visual" id="modalVisual"><span id="modalEmoji">🍲</span></div>
+      <div class="modal-body">
+        <div class="modal-tags" id="modalTags"></div>
+        <h2 id="modalTitle"></h2>
+        <div class="macro-row" id="modalMacros"></div>
+        <div class="mini-tabs">
+          <button class="active" data-tab="ingredients">Ingredientes</button>
+          <button data-tab="prep">Preparo</button>
+          <button data-tab="freeze">Congelar</button>
+        </div>
+        <div class="tab-content" id="modalContent"></div>
+        <button class="primary-btn full" id="addToPlanBtn">+ Adicionar à semana</button>
+      </div>
+    </article>
+  </div>
+
+  <div class="modal" id="shoppingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-shopping></div>
+    <article class="modal-sheet shopping-sheet">
+      <button class="modal-close" data-close-shopping aria-label="Fechar">×</button>
+      <div class="shopping-head"><span>🛒</span><div><small>LISTA AUTOMÁTICA</small><h2>Compras da semana</h2></div></div>
+      <div id="shoppingList" class="shopping-list"></div>
+      <button class="primary-btn full" id="copyListBtn">Copiar lista</button>
+    </article>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
